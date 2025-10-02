@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <!-- Navbar -->
   <header>
   <nav class="navbar">
@@ -44,70 +45,6 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>GlobalLink adalah proyek kelompok bertema Company Profile perdagangan internasional yang dibuat untuk pembelajaran IT Incu Weboender.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Visi</h3>
-          <p>Menghubungkan dunia tanpa batas melalui teknologi perdagangan modern.</p>
-        </div>
-        <div class="card">
-          <h3>Misi</h3>
-          <p>Menyediakan solusi digital bagi bisnis lintas negara agar lebih efisien dan transparan.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-container">
-        <div class="service-card">
-          <h3>Export & Import</h3>
-          <p>Layanan ekspor dan impor barang lintas negara dengan cepat dan aman.</p>
-        </div>
-        <div class="service-card">
-          <h3>Shipping</h3>
-          <p>Solusi logistik dan pengiriman internasional dengan tracking real-time.</p>
-        </div>
-        <div class="service-card">
-          <h3>Consulting</h3>
-          <p>Konsultasi bisnis internasional untuk mendukung pertumbuhan global.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section id="team" class="team">
-    <div class="container">
-      <h2>Our Team</h2>
-      <div class="team-container">
-        <div class="member">
-          <h3>Ivan Firdaus Jonnaidi</h3>
-          <p>Scripter & Landing Page Control</p>
-        </div>
-        <div class="member">
-          <h3>M. Asya Huwaidi Sufyan</h3>
-          <p>Container Markup & Style Sheets</p>
-        </div>
-        <div class="member">
-          <h3>Alfaridho Zanuar R</h3>
-          <p>Content Writer & Navigator Design</p>
-        </div>
-        <div class="member">
-          <h3>Rahmatul Qowiyu Wisnu R</h3>
-          <p>Respons Interact & Display Maker</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
@@ -129,19 +66,11 @@
     <p>© 2025 GlobalLink Trade. All rights reserved.</p>
   </footer>
 
-  <!-- Script hamburger + smooth scroll -->
-<script>
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-  }
-
-  // Smooth Scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-  });
-</script>
+  <!-- Script hamburger -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
