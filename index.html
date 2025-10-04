@@ -90,25 +90,40 @@
 </div>
 
   <!-- Services -->
-  <section id="services" class="services">
+<section id="services" class="services">
   <div class="container">
     <h2>Our Services</h2>
     <div class="service-container">
-      <div class="service-card" onclick="openService('export')">
-        <h3>Export & Import</h3>
-        <p>Layanan ekspor dan impor barang lintas negara dengan cepat dan aman.</p>
+      <div class="service-card" onclick="openService('trading')">
+        <h3>Jenis Trading</h3>
+        <p>Klik untuk melihat detail jenis trading yang tersedia.</p>
       </div>
-      <div class="service-card" onclick="openService('shipping')">
-        <h3>Shipping</h3>
-        <p>Solusi logistik dan pengiriman internasional dengan tracking real-time.</p>
+      <div class="service-card" onclick="openService('platform')">
+        <h3>Platform Trading</h3>
+        <p>Klik untuk melihat platform trading yang bisa digunakan.</p>
       </div>
-      <div class="service-card" onclick="openService('consulting')">
-        <h3>Consulting</h3>
-        <p>Konsultasi bisnis internasional untuk mendukung pertumbuhan global.</p>
+      <div class="service-card" onclick="openService('features')">
+        <h3>Fitur Unggulan</h3>
+        <p>Klik untuk melihat fitur unggulan kami.</p>
+      </div>
+      <div class="service-card" onclick="openService('account')">
+        <h3>Paket Akun</h3>
+        <p>Klik untuk melihat detail paket akun.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Modal Services -->
+<div id="service-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeService()">&times;</span>
+    <div id="service-body"></div>
+    <div class="modal-footer">
+      <button class="btn-primary" onclick="closeService()">Close</button>
+    </div>
+  </div>
+</div>
 
   <!-- Contact Us -->
 <section id="team" class="team">
@@ -253,6 +268,70 @@ window.onclick = function(event) {
 }
 
 </script>
+<script>
+  function openService(type) {
+    const modal = document.getElementById("service-modal");
+    const body = document.getElementById("service-body");
+
+    if (type === "trading") {
+      body.innerHTML = `
+        <h2>Jenis Trading</h2>
+        <ul style="text-align:left; margin-top:15px;">
+          <li>Forex</li>
+          <li>Crypto</li>
+          <li>Saham</li>
+          <li>Komoditas</li>
+          <li>Index</li>
+        </ul>
+      `;
+    } else if (type === "platform") {
+      body.innerHTML = `
+        <h2>Platform Trading</h2>
+        <p>Kami menyediakan berbagai platform trading yang fleksibel:</p>
+        <ul style="text-align:left; margin-top:15px;">
+          <li>Web</li>
+          <li>Mobile App</li>
+          <li>MetaTrader</li>
+          <li>Dan lainnya</li>
+        </ul>
+      `;
+    } else if (type === "features") {
+      body.innerHTML = `
+        <h2>Fitur Unggulan</h2>
+        <ul style="text-align:left; margin-top:15px;">
+          <li>Leverage tinggi</li>
+          <li>Spread rendah</li>
+          <li>Akun demo gratis</li>
+          <li>Copy trading</li>
+        </ul>
+      `;
+    } else if (type === "account") {
+      body.innerHTML = `
+        <h2>Paket Akun</h2>
+        <ul style="text-align:left; margin-top:15px;">
+          <li>Basic</li>
+          <li>Pro</li>
+          <li>VIP</li>
+        </ul>
+      `;
+    }
+
+    modal.style.display = "block";
+  }
+
+  function closeService() {
+    document.getElementById("service-modal").style.display = "none";
+  }
+
+  // Klik luar modal untuk close
+  window.onclick = function(event) {
+    const serviceModal = document.getElementById("service-modal");
+    if (event.target === serviceModal) {
+      serviceModal.style.display = "none";
+    }
+  }
+</script>
+
 
 
 
