@@ -78,59 +78,71 @@
   </div>
 </div>
 
+<!-- Modal Service -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeServiceModal()">&times;</span>
+    <div id="service-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-primary" onclick="closeServiceModal()">Close</button>
+    </div>
+  </div>
+</div>
+
   <!-- Services -->
   <section id="services" class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-container">
-        <div class="service-card">
-          <h3>Export & Import</h3>
-          <p>Layanan ekspor dan impor barang lintas negara dengan cepat dan aman.</p>
-        </div>
-        <div class="service-card">
-          <h3>Shipping</h3>
-          <p>Solusi logistik dan pengiriman internasional dengan tracking real-time.</p>
-        </div>
-        <div class="service-card">
-          <h3>Consulting</h3>
-          <p>Konsultasi bisnis internasional untuk mendukung pertumbuhan global.</p>
-        </div>
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="service-card" onclick="openService('export')">
+        <h3>Export & Import</h3>
+        <p>Layanan ekspor dan impor barang lintas negara dengan cepat dan aman.</p>
+      </div>
+      <div class="service-card" onclick="openService('shipping')">
+        <h3>Shipping</h3>
+        <p>Solusi logistik dan pengiriman internasional dengan tracking real-time.</p>
+      </div>
+      <div class="service-card" onclick="openService('consulting')">
+        <h3>Consulting</h3>
+        <p>Konsultasi bisnis internasional untuk mendukung pertumbuhan global.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Team -->
-  <section id="team" class="team">
-    <div class="container">
-      <h2>Our Team</h2>
-      <div class="team-container">
-        <div class="member">
-          <h3>Ivan Firdaus Jonnaidi</h3>
-          <p>Scripter & Landing Page Control</p>
-        </div>
-        <div class="member">
-          <h3>M. Asya Huwaidi Sufyan</h3>
-          <p>Container Markup & Style Sheets</p>
-        </div>
-        <div class="member">
-          <h3>Alfaridho Zanuar R</h3>
-          <p>Content Writer & Navigator Design</p>
-        </div>
-        <div class="member">
-          <h3>Rahmatul Qowiyu Wisnu R</h3>
-          <p>Respons Interact & Display Maker</p>
-        </div>
+  <!-- Contact Us -->
+<section id="team" class="team">
+  <div class="container">
+    <h2>Our Team</h2>
+    <div class="team-container">
+      <div class="member">
+        <h3>Ivan Firdaus Jonnaidi</h3>
+        <p>Scripter & Landing Page Control</p>
+      </div>
+      <div class="member">
+        <h3>M. Asya Huwaidi Sufyan</h3>
+        <p>Container Markup & Style Sheets</p>
+      </div>
+      <div class="member">
+        <h3>Alfaridho Zanuar R</h3>
+        <p>Content Writer & Navigator Design</p>
+      </div>
+      <div class="member">
+        <h3>Rahmatul Qowiyu Wisnu R</h3>
+        <p>Respons Interactive</p>
+      </div>
+      <div class="member">
+        <h3>Adhen Mada Randra Pratama</h3>
+        <p>Display Editor</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contact Us</h2>
-      <p>Email: info@globallinktrade.com</p>
-      <p>Phone: +62 812 3456 7890</p>
-      <p>Danu</p>
       <form class="contact-form">
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
@@ -197,7 +209,52 @@
       modal.style.display = "none";
     }
   }
+
+  function openService(type) {
+  const modal = document.getElementById("serviceModal");
+  const body = document.getElementById("service-modal-body");
+
+  if (type === "export") {
+    body.innerHTML = `
+      <h2>Export & Import</h2>
+      <p>Kami menyediakan layanan ekspor dan impor barang lintas negara dengan sistem yang aman, cepat, dan sesuai regulasi internasional.</p>
+      <img src="https://via.placeholder.com/500x250" alt="Export & Import">
+    `;
+  } else if (type === "shipping") {
+    body.innerHTML = `
+      <h2>Shipping</h2>
+      <p>Solusi logistik dan pengiriman internasional dengan tracking real-time sehingga pelanggan dapat memantau status barang setiap saat.</p>
+      <img src="https://via.placeholder.com/500x250" alt="Shipping">
+    `;
+  } else if (type === "consulting") {
+    body.innerHTML = `
+      <h2>Consulting</h2>
+      <p>Kami memberikan layanan konsultasi bisnis internasional untuk membantu perusahaan meningkatkan daya saing global.</p>
+      <img src="https://via.placeholder.com/500x250" alt="Consulting">
+    `;
+  }
+
+  modal.style.display = "block";
+}
+
+function closeServiceModal() {
+  document.getElementById("serviceModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal1 = document.getElementById("modal");
+  const modal2 = document.getElementById("serviceModal");
+  if (event.target === modal1) {
+    modal1.style.display = "none";
+  }
+  if (event.target === modal2) {
+    modal2.style.display = "none";
+  }
+}
+
 </script>
+
+
 
 </body>
 </html>
